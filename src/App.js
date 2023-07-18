@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './style.css';
+import ImageSection from './ImageSection';
+import AboutMeSection from './AboutMeSection';
 
-function App() {
+const App = () => {
+
+  const handlePerfilButtonClick = () => {
+    const aboutMeSection = document.getElementById('about-me');
+    const sectionTop = aboutMeSection.getBoundingClientRect().top;
+    window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ImageSection />
+      <AboutMeSection />
     </div>
   );
-}
+};
 
 export default App;
